@@ -1,0 +1,144 @@
+/* Shared cross-device improvements for TestSync pages. */
+html { min-width: 0; }
+body { min-width: 0; }
+img, video, canvas, svg { max-width: 100%; }
+button, input, select, textarea { max-width: 100%; }
+
+.sidebar {
+  width: 250px !important;
+  min-width: 250px !important;
+  flex: 0 0 250px !important;
+  padding: 20px 0 !important;
+}
+
+.sidebar > .sidebar-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 12px !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  margin: 0 0 20px !important;
+  padding: 0 16px 22px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  line-height: normal !important;
+  text-align: center !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar > .sidebar-title span {
+  flex: 0 0 auto !important;
+  font-family: inherit !important;
+  white-space: nowrap !important;
+}
+
+.sidebar > .sidebar-title > .sidebar-logo {
+  display: block !important;
+  width: 52px !important;
+  height: 52px !important;
+  flex: 0 0 52px !important;
+  object-fit: contain !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22) !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    height: auto !important;
+    min-height: 100vh !important;
+    flex-direction: column !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 0 100% !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 0 !important;
+    padding: max(14px, env(safe-area-inset-top)) 0 10px !important;
+  }
+
+  .sidebar > .sidebar-title {
+    justify-content: center !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 0 0 20px !important;
+    padding: 0 16px 30px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    gap: 16px !important;
+    font-size: 46px !important;
+    text-align: center !important;
+  }
+
+  .sidebar > .sidebar-title > .sidebar-logo {
+    width: 84px !important;
+    height: 84px !important;
+    flex-basis: 84px !important;
+  }
+
+  .sidebar > .nav-menu {
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    width: 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .sidebar a, .sidebar .dropdown-btn {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    min-height: 80px !important;
+    padding: 24px 30px !important;
+    font-size: 22px !important;
+    text-align: left !important;
+    white-space: normal;
+  }
+
+  .dropdown-container {
+    flex: 1 0 100%;
+    width: 100% !important;
+    padding-left: 0 !important;
+  }
+
+  .main-container, main, .content, .page-container {
+    width: 100%;
+    min-width: 0;
+    padding: 16px !important;
+  }
+  .main-container { padding-top: 28px !important; }
+
+  .header-section, .filter-section, .panel-header, .toolbar, .form-row {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .header-section > *, .filter-section > *, .panel-header > *, .toolbar > * {
+    min-width: 0;
+  }
+
+  input, select, textarea, button { font-size: 16px; }
+  table { max-width: 100%; }
+  .scores-table, .table-wrap, .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .scores-table th, .scores-table td { white-space: nowrap; }
+}
+
+@media (max-width: 480px) {
+  .main-container, main, .content, .page-container { padding: 10px !important; }
+  .main-container { padding-top: 22px !important; }
+  .content-box, .panel, .card { padding: 12px !important; }
+  .folder-header { gap: 7px; padding: 12px !important; }
+  .folder-section { flex-basis: 100%; }
+}
+
+@media (min-width: 769px) {
+  body { overflow-x: hidden; }
+}
